@@ -1,9 +1,0 @@
-{
-    "imports": {
-        "react": "/extlib/react/react.production.min.js",
-        "react-dom": "/extlib/react-dom/react-dom.production.min.js",
-        "redux": "/extlib/redux/redux.min.js",
-        "react-redux": "/extlib/react-redux/react-redux.min.js",
-        "styled-components": "extlib/styled-components/styled-components.min.js"
-    }
-}
