@@ -1,11 +1,15 @@
 {
+    "ignorePatterns":["ijl.config.js"],
     "env": {
         "browser": true,
         "es2021": true
     },
     "extends": [
+        "eslint:recommended",
         "plugin:react/recommended",
-        "standard-with-typescript"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/typescript",
+        "plugin:prettier/recommended" 
     ],
     "overrides": [
     ],
@@ -14,8 +18,20 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "prettier",
+        "import"
     ],
+    "settings": {
+        "import/resolver": {
+            "typescript": true,
+            "node": true 
+        }, 
+        "react": {
+            "version": "detect"
+        }
+    },
     "rules": {
+        "prettier/prettier": "error"
     }
 }
