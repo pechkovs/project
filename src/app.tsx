@@ -1,7 +1,17 @@
 import React from 'react'
+import Header from './features/header/header'
+import MenuPage from './pages/menu'
 
 const App = () => {
-    return <h1>Hello world для проекта - code</h1>
+    return (
+        <>
+            <Header />
+            <main>
+                <MenuPage />
+            </main>
+            <footer>footer</footer>
+        </>
+    )
 }
 
 export default App
