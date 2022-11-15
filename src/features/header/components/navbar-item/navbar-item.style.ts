@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { NavLink } from 'react-router-dom'
 
 export const NavbarLi = styled.li`
     list-style: none;
@@ -13,7 +14,7 @@ export const NavbarLi = styled.li`
         transition: all 0.3s ease 0s;
     }
 `
-export const NavbarA = styled.a`
+export const NavbarA = styled(NavLink)`
     text-decoration: none;
     color: #bf9270;
 `
