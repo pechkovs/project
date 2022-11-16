@@ -10,6 +10,7 @@ export const FooterRow = styled(Container)`
     justify-content: space-between;
     box-sizing: border-box;
     padding: 50px 30px;
+    z-index: 20;
 `
 export const FooterColumn = styled.div`
     flex: 0 1 33, 333%;
