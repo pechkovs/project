@@ -22,6 +22,7 @@ export const HeaderNav = styled(Container)`
     top: 0;
     width: 100%;
     height: 110px;
+    z-index: 50;
 `
 export const NavbarLi = styled.li`
     list-style: none;
