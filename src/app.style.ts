@@ -22,4 +22,9 @@ export const globalStyles = css`
         display: flex;
         flex-direction: column;
     }
+    h1 {
+        color: #876445;
+        font-family: 'Cormorant Unicase', serif;
+        font-size: 30px;
+    }
 `

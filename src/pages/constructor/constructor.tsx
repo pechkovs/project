@@ -1,5 +1,22 @@
 import React from 'react'
-import { ConstructorPageBody, ConstructorPageTxt } from './constructor.style'
+import ConstructorItems from '../../_data_/constructoritems'
+import {
+    // BlockItem,
+    // BlockItemPrice,
+    // BlockItemTitle,
+    // BlockItemTxt,
+    //BlockItemPrice,
+    //BlockItemTitle,
+    //BlockItemTxt,
+    ConstructorPageBody,
+    ConstructorPageHeading,
+    ConstructorPageP,
+    ConstructorPageTxt,
+    ContainerMain,
+    // ItemImg,
+    //ItemImg,
+    // ItemsBlock,
+} from './constructor.style'
 
 const ConstructorPage = () => {
     return (
@@ -10,129 +27,76 @@ const ConstructorPage = () => {
                     alt="ConstructorPageBodyBgr"
                 />
             </span>
+
             <ConstructorPageTxt>
-                <h1>ConstructorPage</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum reiciendis repudiandae sunt facilis. Pariatur velit
-                    eligendi error dolores optio vero, asperiores, ipsa sit
-                    illum animi blanditiis culpa enim minima sunt?
-                </p>
+                <ConstructorPageHeading>
+                    <h1>Давайте закажем торт!</h1>
+                </ConstructorPageHeading>
+                <ConstructorPageP>
+                    <p>Заполните форму ниже и нажмите кнопку отправить.</p>
+                    <p>Мы обработаем вашу заявку и перезвоним в течение дня.</p>
+                </ConstructorPageP>
             </ConstructorPageTxt>
+
+            <ConstructorPageTxt>
+                <ConstructorPageHeading>
+                    <h1>Примеры начинок</h1>
+                </ConstructorPageHeading>
+            </ConstructorPageTxt>
+
+            {/* <ContainerMain>
+                <ItemsBlock>
+                    <BlockItem>
+                        <ItemImg
+                            src={`${__webpack_public_path__}remote-assets/cakes-examples/AiLi.png`}
+                            alt="AiLi"
+                        />
+                        <BlockItemTitle>АйЛи</BlockItemTitle>
+                        <BlockItemTxt>
+                            <li>Ванильный бисквит</li>
+                            <li>Ванильная пропитка</li>
+                            <li>Сливочно-сырный крем</li>
+                            <li>Клубничная прослойка</li>
+                        </BlockItemTxt>
+                        <BlockItemPrice>1600₽/кг</BlockItemPrice>
+                    </BlockItem>
+    
+                    <BlockItem>
+                        <ItemImg
+                            src={`${__webpack_public_path__}remote-assets/cakes-examples/Lavender.png`}
+                            alt="Lavender"
+                        />
+                        <BlockItemTitle>Лавандовый</BlockItemTitle>
+                        <BlockItemTxt>
+                            <li>Лавандовый бисквит</li>
+                            <li>Черничная пропитка</li>
+                            <li>Сливочно-сырный крем</li>
+                            <li>Черничный соус</li>
+                        </BlockItemTxt>
+                        <BlockItemPrice>1700₽/кг</BlockItemPrice>
+                    </BlockItem>
+    
+                    <BlockItem>
+                        <ItemImg
+                            src={`${__webpack_public_path__}remote-assets/cakes-examples/Chocolate_with_salted caramel.png`}
+                            alt="Chocolate_with_salted caramel"
+                        />
+                        <BlockItemTitle>
+                            Шоколадный с солёной карамелью
+                        </BlockItemTitle>
+                        <BlockItemTxt>
+                            <li>Шоколадный бисквит</li>
+                            <li>Сливочно-сырный крем</li>
+                            <li>Соленая карамель</li>
+                            <li>Орехи и мягкий шоколадный ганаш</li>
+                        </BlockItemTxt>
+                        <BlockItemPrice>1600₽/кг</BlockItemPrice>
+                    </BlockItem>
+                </ItemsBlock>
+            </ContainerMain> */}
+            <ContainerMain>
+                <ConstructorItems />
+            </ContainerMain>
         </>
     )
 }
