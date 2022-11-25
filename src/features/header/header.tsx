@@ -37,6 +37,11 @@ const Header = () => {
                                 Конструктор
                             </NavbarA>
                         </NavbarLi>
+                        <NavbarLi>
+                            <NavbarA to={getNavigationsValue('sugarbun.admin')}>
+                                Личный кабинет
+                            </NavbarA>
+                        </NavbarLi>
                     </Navbar>
                 </div>
             </HeaderNav>
