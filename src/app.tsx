@@ -2,6 +2,7 @@ import React from 'react'
 import MenuPage from './pages/menu/menu'
 import MainPage from './pages/main/main'
 import ConstructorPage from './pages/constructor/constructor'
+import AdminPage from './pages/adminPanel/admin'
 import { globalStyles } from './app.style'
 import { Global } from '@emotion/react'
 import './index.css'
@@ -28,6 +29,10 @@ const router = createBrowserRouter(
                 {
                     path: getNavigationsValue('sugarbun.constructor'),
                     element: <ConstructorPage />,
+                },
+                {
+                    path: getNavigationsValue('sugarbun.admin'),
+                    element: <AdminPage />,
                 },
             ],
         },
