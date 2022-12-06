@@ -7,9 +7,7 @@ export const ConstructorForm = styled(Container)`
     padding: 30px 0;
     font-family: 'Cormorant Unicase', serif;
     color: #4b3827;
-    & {
-        outline: 0;
-    }
+    outline: 0;
 `
 export const FormItem = styled.div`
     margin: 0px 0px 10px 0px;

@@ -56,7 +56,7 @@ const ConstructorPage = () => (
                         <li>Сливочно-сырный крем</li>
                         <li>Клубничная прослойка</li>
                     </BlockItemTxt>
-                    <BlockItemPrice>1600₽/кг</BlockItemPrice>
+                    <BlockItemPrice>1600₽/кг</BlockItemPrice>   
                 </BlockItem>
 
                 <BlockItem>
