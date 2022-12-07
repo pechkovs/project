@@ -3,7 +3,7 @@ import { Player } from '@lottiefiles/react-lottie-player'
 import { NotFoundAnimation } from '../../_data_/animations'
 import { Components_404, H1_TXT_404, H2_TXT_404, Player_404 } from './404.style'
 import { getNavigationsValue } from '@ijl/cli'
-import ButtonItem from '../../features/button/button'
+import ButtonItem from '../../components/button/button'
 
 const NotFoundPage = () => {
     return (
