@@ -42,18 +42,24 @@ const FormContent = ({ formitems }) => {
         reset,
         getValues,
         getFieldState,
+        watch,
     } = useForm<FormFields>({
         mode: 'onChange',
-        defaultValues: { selector1: formitems?.cakeshape[0].name },
+        defaultValues: {
+            selector1: formitems?.cakeshape[0].name,
+            selector2: formitems?.cakesweight[0].name,
+        },
     })
+    watch('file')
+    const file = getValues('file')?.[0]
     const onSubmit: SubmitHandler<FormFields> = (data) => {
-        alert(`<Благодарим за отправку данных> ${data.name}`)
-        reset()
-        console.log('values', getValues('name'))
+        alert(`Благодарим за отправку данных ${data.name}!`)
+        console.log('values', data.file)
         console.log('field state', getFieldState('name'))
+        reset()
     }
     console.log({ errors })
-    console.log(getValues('selector1'))
+    console.log(getValues('file'))
     return (
         <ConstructorForm>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -70,6 +76,9 @@ const FormContent = ({ formitems }) => {
                 <FormItem>
                     <FormLabel>Выберете размер торта:</FormLabel>
                     <FormSelector
+                        {...register('selector2', {
+                            required: 'error message',
+                        })}
                         options={formitems.cakesweight}
                         id={formitems.cakesweight.id}
                     />
@@ -101,14 +110,22 @@ const FormContent = ({ formitems }) => {
                     <div>
                         <File>
                             <FileInput
-                                id="formImage"
+                                {...register('file', {
+                                    required:
+                                        'Данное поле является обязательным!',
+                                })}
+                                name="file"
                                 accept=".jpg, .png, .gif"
                                 type="file"
-                                name="image"
                             />
+                            {errors?.name && (
+                                <div style={{ color: 'red' }}>
+                                    {errors.file.message}
+                                </div>
+                            )}
                             <FileButton>Выбрать</FileButton>
                         </File>
-                        <FilePreview id="formPreview"></FilePreview>
+                        <FilePreview>{file?.name}</FilePreview>
                     </div>
                 </FormItem>
                 <FormItem>
@@ -163,7 +180,7 @@ const FormContent = ({ formitems }) => {
                             },
                         })}
                         name="phone"
-                        type="text"
+                        type="number"
                         placeholder="+7 917 999-99-99"
                     />
                     {errors?.phone && (

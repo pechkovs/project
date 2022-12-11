@@ -1,32 +1,26 @@
 import React from 'react'
 import Form from '../../features/form/form'
-import ConstructorItems from '../../_data_/constructoritems'
+//import ConstructorItems from '../../_data_/constructoritems'
 import {
-    // BlockItem,
-    // BlockItemPrice,
-    // BlockItemTitle,
-    // BlockItemTxt,
-    //BlockItemPrice,
-    //BlockItemTitle,
-    //BlockItemTxt,
+    BlockItem,
+    BlockItemPrice,
+    BlockItemTitle,
+    BlockItemTxt,
     ConstructorPageBody,
     ConstructorPageHeading,
     ConstructorPageP,
     ConstructorPageTxt,
     ContainerMain,
-    // ItemImg,
-    //ItemImg,
-    // ItemsBlock,
+    ItemImg,
+    ItemsBlock,
 } from './constructor.style'
 
 const ConstructorPage = () => (
     <>
-        <span>
-            <ConstructorPageBody
-                src={`${__webpack_public_path__}remote-assets/About_us_bgr1.jpeg`}
-                alt="ConstructorPageBodyBgr"
-            />
-        </span>
+        <ConstructorPageBody
+            src={`${__webpack_public_path__}remote-assets/About_us_bgr1.jpeg`}
+            alt="ConstructorPageBodyBgr"
+        />
         <ConstructorPageTxt>
             <ConstructorPageHeading>
                 <h1>Давайте закажем торт!</h1>
@@ -42,7 +36,7 @@ const ConstructorPage = () => (
                 <h1>Примеры начинок</h1>
             </ConstructorPageHeading>
         </ConstructorPageTxt>
-        {/* <ContainerMain>
+        <ContainerMain>
             <ItemsBlock>
                 <BlockItem>
                     <ItemImg
@@ -56,7 +50,7 @@ const ConstructorPage = () => (
                         <li>Сливочно-сырный крем</li>
                         <li>Клубничная прослойка</li>
                     </BlockItemTxt>
-                    <BlockItemPrice>1600₽/кг</BlockItemPrice>   
+                    <BlockItemPrice>1600₽/кг</BlockItemPrice>
                 </BlockItem>
 
                 <BlockItem>
@@ -91,10 +85,10 @@ const ConstructorPage = () => (
                     <BlockItemPrice>1600₽/кг</BlockItemPrice>
                 </BlockItem>
             </ItemsBlock>
-        </ContainerMain> */}
-        <ContainerMain>
-            <ConstructorItems />
         </ContainerMain>
+        {/* <ContainerMain>
+            <ConstructorItems />
+        </ContainerMain> */}
     </>
 )
 export default ConstructorPage
