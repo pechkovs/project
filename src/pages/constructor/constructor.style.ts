@@ -4,7 +4,7 @@ import Container from '../../components/container/container'
 export const ConstructorPageBody = styled.img`
     background: cover;
     width: 100%;
-    height: 110%;
+    height: 120%;
     z-index: -1;
     position: fixed;
     opacity: 30%;
@@ -13,14 +13,14 @@ export const ConstructorPageBody = styled.img`
 export const ConstructorPageTxt = styled(Container)`
     z-index: 20;
     position: relative;
-    margin: 30px 0px 30px 0px;
+    margin: 0px 0px 30px 0px;
     display: flex;
     flex-direction: column;
 `
 export const ConstructorPageHeading = styled.div`
     display: flex;
     justify-content: center;
-    margin: 5px;
+    margin-top: 40px;
     padding: 0px 15px 0px 15px;
 `
 export const ConstructorPageP = styled.div`
