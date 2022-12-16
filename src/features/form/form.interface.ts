@@ -4,5 +4,29 @@ export interface FormFields {
     phone: number
     selector1: string
     selector2: string
-    file: any
+    checkbox1: Array<Ingredients & { checked: boolean }>
+    file: FileList
+    ingredients: string
+    message: string
+}
+
+export interface FormItems {
+    cakeshape: Array<Cackeshape>
+    ingredients: Array<Ingredients>
+    cakesweight: Array<Cakesweight>
+}
+
+export interface Cackeshape {
+    id: string
+    name: string
+}
+
+export interface Ingredients {
+    id: string
+    name: string
+}
+
+export interface Cakesweight {
+    id: string
+    name: string
 }

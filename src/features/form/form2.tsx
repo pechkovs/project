@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { SubmitHandler, useForm } from 'react-hook-form'
-import { FormFields } from './form.interface'
+import { SubmitHandler, useForm, useFieldArray } from 'react-hook-form'
+import { FormFields, FormItems } from './form.interface'
 import Checkbox from '../../components/checkbox/checkboxone'
 import {
     ConstructorForm,
@@ -17,7 +17,7 @@ import {
 import axios from 'axios'
 import FormSelector from '../../components/selectors/selectors'
 
-const Form: React.FC = () => {
+const Form2: React.FC = () => {
     const [formitems, setIngredients] = useState(null)
     useEffect(() => {
         axios.get('/api/constructor/formitems').then((result) => {
@@ -32,34 +32,49 @@ const Form: React.FC = () => {
     return <FormContent formitems={formitems} />
 }
 
-export default Form
+export default Form2
 
-const FormContent = ({ formitems }) => {
+type FormContentProps = {
+    formitems: FormItems
+}
+
+// eslint-disable-next-line react/prop-types
+const FormContent: React.FC<FormContentProps> = ({ formitems }) => {
     const {
         register,
         handleSubmit,
-        formState: { errors, isValid },
+        formState: { errors },
         reset,
         getValues,
-        getFieldState,
         watch,
+        control,
     } = useForm<FormFields>({
         mode: 'onChange',
         defaultValues: {
             selector1: formitems?.cakeshape[0].name,
             selector2: formitems?.cakesweight[0].name,
+            checkbox1: formitems?.ingredients,
+        },
+    })
+    const { fields } = useFieldArray({
+        control,
+        name: 'checkbox1',
+        rules: {
+            validate: {
+                require: (v) => {
+                    if (v.some((i) => i.checked)) return true
+                    return 'Необходимо выбрать хотя бы одну начинку'
+                },
+            },
         },
     })
     watch('file')
     const file = getValues('file')?.[0]
     const onSubmit: SubmitHandler<FormFields> = (data) => {
         alert(`Благодарим за отправку данных ${data.name}!`)
-        console.log('values', data.file)
-        console.log('field state', getFieldState('name'))
         reset()
     }
-    console.log({ errors })
-    console.log(getValues('file'))
+    const checkbox1Error = errors.checkbox1?.root
     return (
         <ConstructorForm>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -70,7 +85,6 @@ const FormContent = ({ formitems }) => {
                             required: 'error message',
                         })}
                         options={formitems.cakeshape}
-                        id={formitems.cakeshape.id}
                     />
                 </FormItem>
                 <FormItem>
@@ -80,33 +94,47 @@ const FormContent = ({ formitems }) => {
                             required: 'error message',
                         })}
                         options={formitems.cakesweight}
-                        id={formitems.cakesweight.id}
                     />
                 </FormItem>
                 <FormLabel>Выберите начинку:</FormLabel>
                 <FormItem>
-                    {formitems.ingredients.map((ingredients) => {
+                    {fields.map((ingredients, index) => {
                         return (
                             <Checkbox
+                                inputProps={register(
+                                    `checkbox1.${index}.checked`
+                                )}
                                 key={ingredients.id}
-                                id={ingredients.id}
                                 lableTxt={ingredients.name}
                             />
                         )
                     })}
+                    {checkbox1Error?.message && (
+                        <div style={{ color: 'red' }}>
+                            {checkbox1Error.message}
+                        </div>
+                    )}
                 </FormItem>
                 <FormItem>
                     <FormLabel>Пожелания по оформлению</FormLabel>
                     <TextArea
-                        name="Message"
-                        id="formMessage2"
+                        {...register('message', {
+                            maxLength: {
+                                value: 200,
+                                message:
+                                    'Cообщение не должно превышать 200 символов',
+                            },
+                        })}
                         placeholder="Белый торт с цифрами, на день рождения"
-                    ></TextArea>
+                    />
+                    {errors?.message && (
+                        <div style={{ color: 'red' }}>
+                            {errors.message.message}
+                        </div>
+                    )}
                 </FormItem>
                 <FormItem>
-                    <FormLabel>
-                        Прикрепите примеры оформления (если есть)
-                    </FormLabel>
+                    <FormLabel>Прикрепите примеры оформления</FormLabel>
                     <div>
                         <File>
                             <FileInput
@@ -118,7 +146,7 @@ const FormContent = ({ formitems }) => {
                                 accept=".jpg, .png, .gif"
                                 type="file"
                             />
-                            {errors?.name && (
+                            {errors?.file && (
                                 <div style={{ color: 'red' }}>
                                     {errors.file.message}
                                 </div>
@@ -189,9 +217,7 @@ const FormContent = ({ formitems }) => {
                         </div>
                     )}
                 </FormItem>
-                <FormButton type="submit" disabled={!isValid}>
-                    Отправить
-                </FormButton>
+                <FormButton type="submit">Отправить</FormButton>
             </form>
         </ConstructorForm>
     )
