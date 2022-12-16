@@ -1,5 +1,6 @@
 import React from 'react'
-import Form from '../../features/form/form'
+//import Form from '../../features/form/form'
+import Form2 from '../../features/form/form2'
 //import ConstructorItems from '../../_data_/constructoritems'
 import {
     BlockItem,
@@ -29,7 +30,7 @@ const ConstructorPage = () => (
                 <p>Заполните форму ниже и нажмите кнопку отправить.</p>
                 <p>Мы обработаем вашу заявку и перезвоним в течение дня.</p>
             </ConstructorPageP>
-            <Form />
+            <Form2 />
         </ConstructorPageTxt>
         <ConstructorPageTxt>
             <ConstructorPageHeading>

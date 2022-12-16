@@ -7,11 +7,15 @@ import {
 } from './checkboxone.style'
 
 // eslint-disable-next-line react/prop-types
-const Checkbox = ({ lableTxt, id }) => {
+const Checkbox = ({ lableTxt, inputProps }) => {
     return (
         <CboxContainer>
             <CboxLabel>
-                <CboxInput className="CboxInput" type={'checkbox'} id={id} />
+                <CboxInput
+                    {...inputProps}
+                    className="CboxInput"
+                    type={'checkbox'}
+                />
 
                 <CustomCbox className="CustomCbox">{lableTxt}</CustomCbox>
             </CboxLabel>
