@@ -15,6 +15,8 @@ const ConstructorPage = React.lazy(
     () => import('./pages/constructor/constructor')
 )
 
+const AdminPage = React.lazy(() => import('./pages/adminPanel/admin'))
+
 const router = createBrowserRouter(
     [
         {
@@ -36,6 +38,16 @@ const router = createBrowserRouter(
                         <React.Suspense fallback={<div>Загрузка...</div>}>
                             <div>
                                 <ConstructorPage />
+                            </div>
+                        </React.Suspense>
+                    ),
+                },
+                {
+                    path: getNavigationsValue('sugarbun.admin'),
+                    element: (
+                        <React.Suspense fallback={<div>Загрузка...</div>}>
+                            <div>
+                                <AdminPage />,
                             </div>
                         </React.Suspense>
                     ),

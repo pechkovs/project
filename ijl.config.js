@@ -30,7 +30,8 @@ module.exports = {
         'sugarbun.home': '/sugarbun',
         'sugarbun.main': '/',
         'sugarbun.menu': '/menu',
-        'sugarbun.constructor': '/constructor'
+        'sugarbun.constructor': '/constructor',
+        'sugarbun.admin': '/admin'
     },
     features: {
         'sugarbun': {
