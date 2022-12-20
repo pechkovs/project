@@ -1,6 +1,6 @@
 {
     "name": "sugarbun",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "sugarbun",
     "main": "./src/index.tsx",
     "scripts": {
