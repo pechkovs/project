@@ -1,7 +1,7 @@
 import React from 'react'
 import SummaryBox from './SummaryBox'
-//import {styledSummary} from './Summary.style'
-//import {styledSummarybox} from './SummaryBox.style'
+//import { styledSummary } from './Summary.style'
+//import { styledSummarybox } from './SummaryBox.style'
 
 interface IsummData {
     icon: string
