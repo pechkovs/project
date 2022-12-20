@@ -1,6 +1,5 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import LineChart from './LineChart'
 import BarChart from './BarChart'
 import PieChart from './PieChart'
 import data from '../../../_data_/AdminData'
@@ -9,6 +8,7 @@ import { ChartContainer } from './charts.style'
 import { StyledChart } from './charts.style'
 import { ChartButton } from '../../../features/AdminPanelFeatures/ChartButton/ChartButton'
 import '@emotion/styled'
+import LineChart from './LineChart'
 
 const RevenueChart: React.FC = () => {
     const [chartData, setChartData] = useState(null)
