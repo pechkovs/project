@@ -1,35 +1,30 @@
-import React, { useMemo } from 'react'
-import { Bar } from 'react-chartjs-2'
+import React from 'react'
+import { Line } from 'react-chartjs-2'
 
-interface IChartData {
+export const options = {
+    responsive: true,
+    plugins: {
+        legend: {
+            labels: {
+                font: {
+                    size: 10,
+                    color: '#fff',
+                },
+            },
+        },
+    },
+}
+
+interface LineChartData {
     labels: string[]
     datasets: {
-        label: string
         data: number[]
     }[]
 }
-
-const BarChart: React.FC<{
-    chartData: IChartData
-    chartTitle: string
-}> = (props) => {
-    const { chartTitle } = props
-    const options = useMemo(
-        () => ({
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'center' as const,
-                },
-                title: {
-                    display: true,
-                    text: chartTitle,
-                },
-            },
-        }),
-        [chartTitle]
-    )
-    return <Bar options={options} data={props.chartData} />
+const LineChart: React.FC<{ chartData: LineChartData; chartTitle: string }> = (
+    props
+) => {
+    return <Line data={props.chartData} options={options} />
 }
 
-export default BarChart
+export default LineChart
