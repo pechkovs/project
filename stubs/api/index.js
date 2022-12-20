@@ -8,3 +8,8 @@ router.get('/constructor/formitems', (req, res) => {
     // eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
     res.send(require('./formitems.json'))
 })
+
+router.get('/admin/adminstats', (req, res) => {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
+    res.send(require('./adminstats.json'))
+})
