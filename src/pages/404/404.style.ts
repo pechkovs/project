@@ -4,7 +4,6 @@ export const Components_404 = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    border: solid green;
     height: 100%;
 `
 
