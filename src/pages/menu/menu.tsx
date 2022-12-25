@@ -1,11 +1,9 @@
 import React from 'react'
 import OrderCard from '../../components/card/order-card/order-card'
 import Category from '../../components/category/category'
-import {
-    CardPlace,
-    CategoryPage,
-} from '../../components/category/category.style'
+import { CategoryPage } from '../../components/category/category.style'
 import { ConstructorPageBody } from '../constructor/constructor.style'
+import { CardPlace } from '../../components/card/order-card/order-card.style'
 
 const MenuPage = () => {
     return (

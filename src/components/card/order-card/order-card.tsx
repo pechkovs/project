@@ -1,11 +1,12 @@
 import React from 'react'
 import {
-    CardClick,
     CardItem,
-    CardPrice,
     CardTitle,
     CardTxt,
-} from '../../category/category.style'
+    CardPrice,
+    CardClick,
+} from './order-card.style'
+
 type OrderCardProps = {
     title: string
     imageName: string

@@ -1,5 +1,6 @@
 import React from 'react'
-import { CardItem, CardTitle, CardTxt } from '../../category/category.style'
+import { CardItem, CardTitle, CardTxt } from './order-card.style'
+
 type ConstructorCardProps = {
     title: string
     imageName: string
