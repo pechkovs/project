@@ -1,7 +1,7 @@
 import React from 'react'
 import ConstructorCard from '../../components/card/order-card/constructor-card'
 import OrderCard from '../../components/card/order-card/order-card'
-import { CardPlace } from '../../components/category/category.style'
+import { CardPlace } from '../../components/card/order-card.style.ts'
 import ConstructorItems from '../../_data_/constructoritems'
 import {
     // BlockItem,
