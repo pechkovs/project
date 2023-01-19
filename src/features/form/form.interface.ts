@@ -11,9 +11,9 @@ export interface FormFields {
 }
 
 export interface FormItems {
-    cakeshape: Array<Cackeshape>
+    cakeshapes: Array<Cackeshape>
     ingredients: Array<Ingredients>
-    cakesweight: Array<Cakesweight>
+    cakesweights: Array<Cakesweight>
 }
 
 export interface Cackeshape {

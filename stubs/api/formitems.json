@@ -73,7 +73,7 @@
     }
 ],
 
-"cakeshape": [
+"cakeshapes": [
     {
         "name": "Круг",
         "id": "sh1"
@@ -96,7 +96,7 @@
     }
 ],
 
-"cakesweight": [
+"cakesweights": [
     {
         "name": "1.5 кг",
         "id": "cw1"
