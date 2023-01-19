@@ -16,11 +16,14 @@ import {
 } from './form.style'
 import axios from 'axios'
 import FormSelector from '../../components/selectors/selectors'
+import { getConfigValue } from '@ijl/cli'
+
+const BaseApiUrl = getConfigValue('sugarbun.baseApiUrl')
 
 const Form2: React.FC = () => {
     const [formitems, setIngredients] = useState(null)
     useEffect(() => {
-        axios.get('/api/constructor/formitems').then((result) => {
+        axios.get(BaseApiUrl + '/constructor/formitems').then((result) => {
             setIngredients(result.data)
             console.log(result.data)
         })
@@ -51,8 +54,8 @@ const FormContent: React.FC<FormContentProps> = ({ formitems }) => {
     } = useForm<FormFields>({
         mode: 'onChange',
         defaultValues: {
-            selector1: formitems?.cakeshape[0].name,
-            selector2: formitems?.cakesweight[0].name,
+            selector1: formitems?.cakeshapes[0].name,
+            selector2: formitems?.cakesweights[0].name,
             checkbox1: formitems?.ingredients,
         },
     })
@@ -84,7 +87,7 @@ const FormContent: React.FC<FormContentProps> = ({ formitems }) => {
                         {...register('selector1', {
                             required: 'error message',
                         })}
-                        options={formitems.cakeshape}
+                        options={formitems.cakeshapes}
                     />
                 </FormItem>
                 <FormItem>
@@ -93,7 +96,7 @@ const FormContent: React.FC<FormContentProps> = ({ formitems }) => {
                         {...register('selector2', {
                             required: 'error message',
                         })}
-                        options={formitems.cakesweight}
+                        options={formitems.cakesweights}
                     />
                 </FormItem>
                 <FormLabel>Выберите начинку:</FormLabel>
