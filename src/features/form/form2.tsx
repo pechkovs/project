@@ -15,7 +15,10 @@ import {
     TextArea,
 } from './form.style'
 import FormSelector from '../../components/selectors/selectors'
-import { useGetFormitemsQuery } from '../../_data_/rtkform/rtkform'
+import {
+    useGetFormitemsQuery,
+    useConstructorSubmitMutation,
+} from '../../_data_/rtkform/rtkform'
 
 const Form2: React.FC = () => {
     const { data, isLoading, isError } = useGetFormitemsQuery(null)
@@ -67,9 +70,16 @@ const FormContent: React.FC<FormContentProps> = ({ formitems }) => {
     })
     watch('file')
     const file = getValues('file')?.[0]
-    const onSubmit: SubmitHandler<FormFields> = (data) => {
-        alert(`Благодарим за отправку данных ${data.name}!`)
-        reset()
+    const [constructorSubmit] = useConstructorSubmitMutation()
+    const onSubmit: SubmitHandler<FormFields> = async (data) => {
+        try {
+            const response = await constructorSubmit(data).unwrap()
+            console.log(response)
+            alert('success')
+            reset()
+        } catch (error) {
+            alert('error')
+        }
     }
     const checkbox1Error = errors.checkbox1?.root
     return (

@@ -13,3 +13,7 @@ router.get('/admin/adminstats', (req, res) => {
     // eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
     res.send(require('./adminstats.json'))
 })
+
+router.post('/constructor/submit', (req, res) => {
+    res.send()
+})

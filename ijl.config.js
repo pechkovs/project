@@ -40,7 +40,7 @@ module.exports = {
     },
     config: {
         "sugarbun.baseApiUrl": "http://localhost:8099/api",
-        "sugarbun.baseApiUrl": "https://b1.inno-js.ru/multystub/sugarbun",
+        //"sugarbun.baseApiUrl": "https://b1.inno-js.ru/multystub/sugarbun",
         "counter.randomorg.api.url": "https://www.random.org/integers/?num=1&min=1&max=99&col=11&base=10&format=plain&rnd=new",
     }
 }
