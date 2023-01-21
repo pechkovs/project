@@ -21,8 +21,10 @@
         "@iconify/react": "^4.0.1",
         "@ijl/cli": "^4.1.5",
         "@lottiefiles/react-lottie-player": "^3.4.9",
+        "@reduxjs/toolkit": "^1.9.1",
         "@types/react": "^17.0.50",
         "@types/react-dom": "^17.0.17",
+        "@types/react-redux": "^7.1.25",
         "chart.js": "^4.1.1",
         "express": "^4.18.2",
         "i18next": "^22.3.0",
@@ -32,6 +34,7 @@
         "react-chartjs-2": "^5.1.0",
         "react-dom": "^17.0.2",
         "react-hook-form": "^7.40.0",
+        "react-redux": "^8.0.5",
         "react-router-dom": "^6.4.3",
         "react-spring": "^9.5.5"
     },

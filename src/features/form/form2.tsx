@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { SubmitHandler, useForm, useFieldArray } from 'react-hook-form'
 import { FormFields, FormItems } from './form.interface'
 import Checkbox from '../../components/checkbox/checkboxone'
@@ -14,25 +14,19 @@ import {
     FormLabel,
     TextArea,
 } from './form.style'
-import axios from 'axios'
 import FormSelector from '../../components/selectors/selectors'
-import { getConfigValue } from '@ijl/cli'
-
-const BaseApiUrl = getConfigValue('sugarbun.baseApiUrl')
+import { useGetFormitemsQuery } from '../../_data_/rtkform/rtkform'
 
 const Form2: React.FC = () => {
-    const [formitems, setIngredients] = useState(null)
-    useEffect(() => {
-        axios.get(BaseApiUrl + '/constructor/formitems').then((result) => {
-            setIngredients(result.data)
-            console.log(result.data)
-        })
-    }, [])
+    const { data, isLoading, isError } = useGetFormitemsQuery(null)
 
-    if (!formitems) {
+    if (isLoading) {
         return <>Данные еще не загружены</>
     }
-    return <FormContent formitems={formitems} />
+    if (isError) {
+        return <>Произошла ошибка, попробуйте обновить страницу</>
+    }
+    return <FormContent formitems={data} />
 }
 
 export default Form2

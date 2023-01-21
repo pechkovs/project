@@ -9,6 +9,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './pages/layout/layout'
 import NotFoundPage from './pages/404/404'
 import { getNavigationsValue } from '@ijl/cli'
+import { Provider } from 'react-redux'
+import { store } from './_data_/store/store'
 
 // Этот компонент загружается динамически благодаря React.lazy
 const ConstructorPage = React.lazy(
@@ -60,10 +62,10 @@ const router = createBrowserRouter(
 
 const App = () => {
     return (
-        <>
+        <Provider store={store}>
             <RouterProvider router={router} />
             <Global styles={globalStyles} />
-        </>
+        </Provider>
     )
 }
 
