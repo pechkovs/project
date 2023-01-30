@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminPage snapshot 1`] = `
+<div>
+  <img
+    alt="AdminPageBodyBgr"
+    class="css-q4ss81"
+    src="__webpack_public_path__remote-assets/About_us_bgr1.jpeg"
+  />
+  <main>
+    <div
+      class="css-vyaskw"
+    >
+      <div
+        class="css-1rm1o23"
+      >
+        <div>
+          loading
+        </div>
+      </div>
+      <div
+        class="css-1rm1o23"
+      >
+        <div>
+          loading
+        </div>
+      </div>
+      <div
+        class="css-1rm1o23"
+      >
+        <div>
+          loading
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+`;

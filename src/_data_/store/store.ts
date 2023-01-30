@@ -1,11 +1,19 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { rtkForm } from '../rtkform/rtkform'
 import { rtkCake } from '../rtkcake/rtkcake'
+import { api } from './api'
+import { ordersChartReducer } from './ordersSlice'
+import { revenueChartReducer } from './revenueSlice'
+import { salesChartReducer } from './salesSlice'
 
 const rootReducer = combineReducers({
     //userReducer,
     [rtkForm.reducerPath]: rtkForm.reducer,
+    [api.reducerPath]: api.reducer,
     [rtkCake.reducerPath]: rtkCake.reducer,
+    sales: salesChartReducer,
+    revenue: revenueChartReducer,
+    orders: ordersChartReducer,
 })
 
 export const setupStore = () => {
@@ -14,6 +22,7 @@ export const setupStore = () => {
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware().concat(
                 rtkForm.middleware,
+                api.middleware,
                 rtkCake.middleware
             ),
     })
