@@ -32,7 +32,13 @@ const router = createBrowserRouter(
                 },
                 {
                     path: getNavigationsValue('sugarbun.menu'),
-                    element: <MenuPage />,
+                    element: (
+                        <React.Suspense fallback={<div>Загрузка...</div>}>
+                            <div>
+                                <MenuPage />
+                            </div>
+                        </React.Suspense>
+                    ),
                 },
                 {
                     path: getNavigationsValue('sugarbun.constructor'),
