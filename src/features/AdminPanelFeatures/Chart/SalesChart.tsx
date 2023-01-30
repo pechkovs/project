@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
+import LineChart from './LineChart'
 import BarChart from './BarChart'
 import PieChart from './PieChart'
 import data from '../../../_data_/AdminData'
@@ -7,14 +8,20 @@ import { ChartWrapper } from './charts.style'
 import { ChartContainer } from './charts.style'
 import { StyledChart } from './charts.style'
 import { ChartButton } from '../../../features/AdminPanelFeatures/ChartButton/ChartButton'
-import LineChart from './LineChart'
+import { useAppDispatch, useAppSelector } from '../../../_data_/store//hooks'
+import {
+    isBarSalesChart,
+    isLineSalesChart,
+    isPieSalesChart,
+    salesChartActions,
+} from '../../../_data_/store/salesSlice'
 
 const SalesChart: React.FC = () => {
     const [chartData, setChartData] = useState(null)
     useEffect(() => {
         const Sales = []
         axios.get('/api/admin/adminstats').then((result) => {
-            for (const dataObj of result.data.data) {
+            for (const dataObj of result.data.adminstats) {
                 Sales.push(parseInt(dataObj.monthly_sales))
             }
             setChartData({
@@ -59,7 +66,10 @@ const SalesChart: React.FC = () => {
         })
     }, [])
 
-    const [ActiveChart, setActiveChart] = useState('Pie')
+    const dispatch = useAppDispatch()
+    const isPieChart = useAppSelector(isPieSalesChart)
+    const isBarChart = useAppSelector(isBarSalesChart)
+    const isLineChart = useAppSelector(isLineSalesChart)
 
     if (chartData === null) {
         return <div>loading</div>
@@ -69,16 +79,28 @@ const SalesChart: React.FC = () => {
         <>
             <StyledChart>
                 <ChartContainer>
-                    <ChartButton onClick={() => setActiveChart('Bar')}>
+                    <ChartButton
+                        onClick={() =>
+                            dispatch(salesChartActions.switchMode('Bar'))
+                        }
+                    >
                         Bar
                     </ChartButton>
-                    <ChartButton onClick={() => setActiveChart('Line')}>
+                    <ChartButton
+                        onClick={() =>
+                            dispatch(salesChartActions.switchMode('Line'))
+                        }
+                    >
                         Line
                     </ChartButton>
-                    <ChartButton onClick={() => setActiveChart('Pie')}>
+                    <ChartButton
+                        onClick={() =>
+                            dispatch(salesChartActions.switchMode('Pie'))
+                        }
+                    >
                         Pie
                     </ChartButton>
-                    {ActiveChart === 'Pie' && (
+                    {isPieChart && (
                         <ChartWrapper>
                             <PieChart
                                 chartData={chartData}
@@ -86,7 +108,7 @@ const SalesChart: React.FC = () => {
                             />
                         </ChartWrapper>
                     )}
-                    {ActiveChart === 'Bar' && (
+                    {isBarChart && (
                         <ChartWrapper>
                             <BarChart
                                 chartData={chartData}
@@ -95,7 +117,7 @@ const SalesChart: React.FC = () => {
                         </ChartWrapper>
                     )}
 
-                    {ActiveChart === 'Line' && (
+                    {isLineChart && (
                         <ChartWrapper>
                             <LineChart
                                 chartData={chartData}

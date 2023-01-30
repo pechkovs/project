@@ -1,5 +1,5 @@
 {"status":"success",
-"data":[
+"adminstats":[
     {"id":1,"month":"Январь","monthly_sales":85600,"monthly_orders":23,"monthly_revenue":100.5},
     {"id":2,"month":"Февраль","monthly_sales":110000,"monthly_orders":23,"monthly_revenue":120.4},
     {"id":3,"month":"Март","monthly_sales":85600,"monthly_orders":23,"monthly_revenue":100.6},
