@@ -4,7 +4,7 @@ import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import SalesChart from '../Chart/SalesChart'
 import { store } from '../../../_data_/store/store'
-import Provider from 'react-redux/es/components/Provider'
+import { Provider } from 'react-redux'
 
 describe('OrdersChart', () => {
     it('should render the SalesChart', () => {

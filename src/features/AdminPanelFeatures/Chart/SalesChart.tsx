@@ -15,12 +15,15 @@ import {
     isPieSalesChart,
     salesChartActions,
 } from '../../../_data_/store/salesSlice'
+import { getConfigValue } from '@ijl/cli'
 
 const SalesChart: React.FC = () => {
     const [chartData, setChartData] = useState(null)
     useEffect(() => {
         const Sales = []
-        axios.get('/api/admin/adminstats').then((result) => {
+        const BaseApiUrl = getConfigValue('sugarbun.baseApiUrl')
+        console.log(BaseApiUrl)
+        axios.get(BaseApiUrl + '/admin/adminstats').then((result) => {
             for (const dataObj of result.data.adminstats) {
                 Sales.push(parseInt(dataObj.monthly_sales))
             }

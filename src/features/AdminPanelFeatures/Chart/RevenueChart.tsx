@@ -16,12 +16,15 @@ import {
     revenueChartActions,
 } from '../../../_data_/store/revenueSlice'
 import { useAppDispatch, useAppSelector } from '../../../_data_/store/hooks'
+import { getConfigValue } from '@ijl/cli'
 
 const RevenueChart: React.FC = () => {
     const [chartData, setChartData] = useState(null)
     useEffect(() => {
         const Revenue = []
-        axios.get('/api/admin/adminstats').then((result) => {
+        const BaseApiUrl = getConfigValue('sugarbun.baseApiUrl')
+        console.log(BaseApiUrl)
+        axios.get(BaseApiUrl + '/admin/adminstats').then((result) => {
             for (const dataObj of result.data.adminstats) {
                 Revenue.push(parseInt(dataObj.monthly_revenue))
             }
