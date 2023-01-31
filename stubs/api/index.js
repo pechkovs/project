@@ -17,3 +17,7 @@ router.get('/admin/adminstats', (req, res) => {
 router.post('/constructor/submit', (req, res) => {
     res.send()
 })
+
+router.get('/menu/cakeitems', (req, res) => {
+    res.send(require('./cakeitems.json'))
+})

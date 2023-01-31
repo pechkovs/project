@@ -15,6 +15,7 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js'
+import { useAppDispatch } from '../../../_data_/store/hooks'
 
 ChartJS.register(
     CategoryScale,
@@ -29,6 +30,7 @@ ChartJS.register(
 )
 
 const Charts = () => {
+    const dispatch = useAppDispatch()
     return (
         <>
             <main>

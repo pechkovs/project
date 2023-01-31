@@ -1,0 +1,17 @@
+{"status":"success",
+"adminstats":[
+    {"id":1,"month":"Январь","monthly_sales":85600,"monthly_orders":23,"monthly_revenue":100.5},
+    {"id":2,"month":"Февраль","monthly_sales":110000,"monthly_orders":23,"monthly_revenue":120.4},
+    {"id":3,"month":"Март","monthly_sales":85600,"monthly_orders":23,"monthly_revenue":100.6},
+    {"id":4,"month":"Апрель","monthly_sales":85600,"monthly_orders":23,"monthly_revenue":102.3},
+    {"id":5,"month":"Май","monthly_sales":85600,"monthly_orders":23,"monthly_revenue":80.2},
+    {"id":6,"month":"Июнь","monthly_sales":85600,"monthly_orders":23,"monthly_revenue":150.6},
+    {"id":7,"month":"Июль","monthly_sales":85600,"monthly_orders":23,"monthly_revenue":130.2},
+    {"id":8,"month":"Август","monthly_sales":85600,"monthly_orders":23,"monthly_revenue":240.7},
+    {"id":9,"month":"Сентябрь","monthly_sales":85600,"monthly_orders":23,"monthly_revenue":180.4},
+    {"id":10,"month":"Октбярь","monthly_sales":85600,"monthly_orders":23,"monthly_revenue":100.44},
+    {"id":11,"month":"Ноябрь","monthly_sales":85600,"monthly_orders":23,"monthly_revenue":15.5},
+    {"id":12,"month":"Декабрь","monthly_sales":85600,"monthly_orders":23,"monthly_revenue":21.7}
+    ]
+}
+
