@@ -3,6 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
+// eslint-disable-next-line no-undef
 module.exports = {
     // All imported modules in your tests should be mocked automatically
     // automock: false,
@@ -11,7 +12,7 @@ module.exports = {
     // bail: 0,
 
     // The directory where Jest should store its cached dependency information
-    // cacheDirectory: "/private/var/folders/qm/6z83d53j5fz1m3gkmh44zvtw0000gn/T/jest_dx",
+    // cacheDirectory: "C:\\Users\\Kashe\\AppData\\Local\\Temp\\jest",
 
     // Automatically clear mock calls, instances, contexts and results before every test
     clearMocks: true,
@@ -20,10 +21,10 @@ module.exports = {
     collectCoverage: true,
 
     // An array of glob patterns indicating a set of files for which coverage information should be collected
-    collectCoverageFrom: ['.src/**/*.[jt]s?(x)', '.src/index.tsx'],
+    collectCoverageFrom: ['./src/**/*.[tj]s?(x)', '|./src/index.tsx'],
 
     // The directory where Jest should output its coverage files
-    coverageDirectory: 'coverage',
+    coverageDirectory: 'dist/coverage',
 
     // An array of regexp pattern strings used to skip coverage collection
     // coveragePathIgnorePatterns: [
@@ -65,7 +66,9 @@ module.exports = {
     // globalTeardown: undefined,
 
     // A set of global variables that need to be available in all test environments
-    // globals: {},
+    globals: {
+        __webpack_public_path__: '__webpack_public_path__',
+    },
 
     // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
     // maxWorkers: "50%",
@@ -88,7 +91,12 @@ module.exports = {
     // ],
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-    // moduleNameMapper: {},
+    moduleNameMapper: {
+        '@ijl/cli': '<rootDir>/__mocks__/ijl-cli.js',
+        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+            '<rootDir>/__mocks__/fileMock.js',
+        '\\.(css|less)$': 'identity-obj-proxy',
+    },
 
     // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
     // modulePathIgnorePatterns: [],
@@ -135,7 +143,7 @@ module.exports = {
     // setupFiles: [],
 
     // A list of paths to modules that run some code to configure or set up the testing framework before each test
-    // setupFilesAfterEnv: [],
+    setupFilesAfterEnv: ['@testing-library/jest-dom', './jest.setup.ts'],
 
     // The number of seconds after which a test is considered as slow and reported as such in the results.
     // slowTestThreshold: 5,

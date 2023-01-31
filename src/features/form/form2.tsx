@@ -56,6 +56,7 @@ const FormContent: React.FC<FormContentProps> = ({ formitems }) => {
             checkbox1: formitems?.ingredients,
         },
     })
+    console.log(errors)
     const { fields } = useFieldArray({
         control,
         name: 'checkbox1',
@@ -75,7 +76,7 @@ const FormContent: React.FC<FormContentProps> = ({ formitems }) => {
         try {
             const response = await constructorSubmit(data).unwrap()
             console.log(response)
-            alert('success')
+            alert('Благодарим за отправку данных!')
             reset()
         } catch (error) {
             alert('error')
@@ -86,22 +87,26 @@ const FormContent: React.FC<FormContentProps> = ({ formitems }) => {
         <ConstructorForm>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <FormItem>
-                    <FormLabel>Выберете форму торта:</FormLabel>
-                    <FormSelector
-                        {...register('selector1', {
-                            required: 'error message',
-                        })}
-                        options={formitems.cakeshapes}
-                    />
+                    <FormLabel>
+                        Выберете форму торта:
+                        <FormSelector
+                            {...register('selector1', {
+                                required: 'error message',
+                            })}
+                            options={formitems.cakeshapes}
+                        />
+                    </FormLabel>
                 </FormItem>
                 <FormItem>
-                    <FormLabel>Выберете размер торта:</FormLabel>
-                    <FormSelector
-                        {...register('selector2', {
-                            required: 'error message',
-                        })}
-                        options={formitems.cakesweights}
-                    />
+                    <FormLabel>
+                        Выберете размер торта:
+                        <FormSelector
+                            {...register('selector2', {
+                                required: 'error message',
+                            })}
+                            options={formitems.cakesweights}
+                        />
+                    </FormLabel>
                 </FormItem>
                 <FormLabel>Выберите начинку:</FormLabel>
                 <FormItem>
@@ -123,17 +128,19 @@ const FormContent: React.FC<FormContentProps> = ({ formitems }) => {
                     )}
                 </FormItem>
                 <FormItem>
-                    <FormLabel>Пожелания по оформлению</FormLabel>
-                    <TextArea
-                        {...register('message', {
-                            maxLength: {
-                                value: 200,
-                                message:
-                                    'Cообщение не должно превышать 200 символов',
-                            },
-                        })}
-                        placeholder="Белый торт с цифрами, на день рождения"
-                    />
+                    <FormLabel>
+                        Пожелания по оформлению
+                        <TextArea
+                            {...register('message', {
+                                maxLength: {
+                                    value: 200,
+                                    message:
+                                        'Cообщение не должно превышать 200 символов',
+                                },
+                            })}
+                            placeholder="Белый торт с цифрами, на день рождения"
+                        />
+                    </FormLabel>
                     {errors?.message && (
                         <div style={{ color: 'red' }}>
                             {errors.message.message}
@@ -141,38 +148,43 @@ const FormContent: React.FC<FormContentProps> = ({ formitems }) => {
                     )}
                 </FormItem>
                 <FormItem>
-                    <FormLabel>Прикрепите примеры оформления</FormLabel>
                     <div>
                         <File>
-                            <FileInput
-                                {...register('file', {
-                                    required:
-                                        'Данное поле является обязательным!',
-                                })}
-                                name="file"
-                                accept=".jpg, .png, .gif"
-                                type="file"
-                            />
+                            <FormLabel>
+                                Прикрепите примеры оформления
+                                <FileInput
+                                    {...register('file', {
+                                        // required:
+                                        //     'Данное поле является обязательным!',
+                                    })}
+                                    name="file"
+                                    accept=".jpg, .png, .gif"
+                                    type="file"
+                                />
+                            </FormLabel>
                             {errors?.file && (
                                 <div style={{ color: 'red' }}>
                                     {errors.file.message}
                                 </div>
                             )}
+                            <br />
                             <FileButton>Выбрать</FileButton>
                         </File>
                         <FilePreview>{file?.name}</FilePreview>
                     </div>
                 </FormItem>
                 <FormItem>
-                    <FormLabel>ФИО*</FormLabel>
-                    <FormInput
-                        {...register('name', {
-                            required: 'Данное поле является обязательным!',
-                        })}
-                        name="name"
-                        type="text"
-                        placeholder="Введите ваши ФИО"
-                    />
+                    <FormLabel>
+                        ФИО*
+                        <FormInput
+                            {...register('name', {
+                                required: 'Данное поле является обязательным!',
+                            })}
+                            name="name"
+                            type="text"
+                            placeholder="Введите ваши ФИО"
+                        />
+                    </FormLabel>
                     {errors?.name && (
                         <div style={{ color: 'red' }}>
                             {errors.name.message}
@@ -180,20 +192,22 @@ const FormContent: React.FC<FormContentProps> = ({ formitems }) => {
                     )}
                 </FormItem>
                 <FormItem>
-                    <FormLabel>E-mail*</FormLabel>
-                    <FormInput
-                        {...register('email', {
-                            required: 'Данное поле является обязательным!',
-                            pattern: {
-                                value: /.+@.+\..+/i,
-                                message:
-                                    'Введите действительный адрес электронной почты!',
-                            },
-                        })}
-                        name="email"
-                        type="text"
-                        placeholder="Введите ваш e-mail"
-                    />
+                    <FormLabel>
+                        E-mail*
+                        <FormInput
+                            {...register('email', {
+                                required: 'Данное поле является обязательным!',
+                                pattern: {
+                                    value: /.+@.+\..+/i,
+                                    message:
+                                        'Введите действительный адрес электронной почты!',
+                                },
+                            })}
+                            name="email"
+                            type="text"
+                            placeholder="Введите ваш e-mail"
+                        />
+                    </FormLabel>
                     {errors?.email && (
                         <div style={{ color: 'red' }}>
                             {errors.email.message}
@@ -201,23 +215,26 @@ const FormContent: React.FC<FormContentProps> = ({ formitems }) => {
                     )}
                 </FormItem>
                 <FormItem>
-                    <FormLabel>Телефон*</FormLabel>
-                    <FormInput
-                        {...register('phone', {
-                            required: 'Данное поле является обязательным!',
-                            minLength: {
-                                value: 11,
-                                message: 'В поле должно быть 11 цифр',
-                            },
-                            pattern: {
-                                value: /[0-9]/,
-                                message: 'Поле должно содержать только цифры!',
-                            },
-                        })}
-                        name="phone"
-                        type="number"
-                        placeholder="+7 917 999-99-99"
-                    />
+                    <FormLabel>
+                        Телефон*
+                        <FormInput
+                            {...register('phone', {
+                                required: 'Данное поле является обязательным!',
+                                minLength: {
+                                    value: 11,
+                                    message: 'В поле должно быть 11 цифр',
+                                },
+                                pattern: {
+                                    value: /[0-9]/,
+                                    message:
+                                        'Поле должно содержать только цифры!',
+                                },
+                            })}
+                            name="phone"
+                            type="number"
+                            placeholder="+7 917 999-99-99"
+                        />
+                    </FormLabel>
                     {errors?.phone && (
                         <div style={{ color: 'red' }}>
                             {errors.phone.message}
