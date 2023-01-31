@@ -21,3 +21,7 @@ router.post('/constructor/submit', (req, res) => {
 router.get('/menu/cakeitems', (req, res) => {
     res.send(require('./cakeitems.json'))
 })
+
+router.post('/menu/submit', (req, res) => {
+    res.send()
+})

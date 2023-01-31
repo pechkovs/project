@@ -7,11 +7,3 @@ exports[`OrdersChart should render the OrdersChart 1`] = `
   </div>
 </div>
 `;
-
-exports[`OrdersChart should render the SalesChart 1`] = `
-<div>
-  <div>
-    loading
-  </div>
-</div>
-`;
