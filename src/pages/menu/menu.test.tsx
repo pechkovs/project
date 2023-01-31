@@ -7,7 +7,6 @@ import { store } from './../../_data_/store/store'
 import 'whatwg-fetch'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
-import user from '@testing-library/user-event'
 
 const onSubmit = jest.fn()
 
