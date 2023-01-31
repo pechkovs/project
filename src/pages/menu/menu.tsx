@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from 'react'
 import OrderCard from '../../components/card/order-card/order-card'
 import { CardPlace } from '../../components/card/order-card/order-card.style'
@@ -41,7 +42,7 @@ const MenuPage = () => {
                                 description={cake.description}
                                 description1={cake.description1}
                                 description2={cake.description2}
-                                description3={cake.description2}
+                                description3={cake.description3}
                                 price={cake.price}
                             ></OrderCard>
                         )
@@ -63,7 +64,7 @@ const MenuPage = () => {
                                 description={dessert.description}
                                 description1={dessert.description1}
                                 description2={dessert.description2}
-                                description3={dessert.description2}
+                                description3={dessert.description3}
                                 price={dessert.price}
                             ></OrderCard>
                         )
