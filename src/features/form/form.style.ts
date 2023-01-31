@@ -13,7 +13,7 @@ export const FormItem = styled.div`
     margin: 0px 0px 10px 0px;
     max-width: 100%;
 `
-export const FormLabel = styled.div`
+export const FormLabel = styled.label`
     padding: 10px 0px 0px 0px;
 `
 export const TextArea = styled.textarea`
@@ -21,7 +21,7 @@ export const TextArea = styled.textarea`
     resize: vertical;
     background-color: #f8ede0;
     height: 50px;
-    padding: 0px 20px;
+    padding: 12px 20px;
     border: 0.5px solid #ad937b;
     border-radius: 5px;
     width: 100%;
@@ -134,6 +134,7 @@ export const FileButton = styled.button`
     justify-content: center;
     align-items: center;
     background-color: #d2535a;
+    margin-top: 10px;
     padding: 0px 20px;
     color: white;
     font-family: 'Cormorant Unicase', serif;
@@ -167,6 +168,7 @@ export const FormInput = styled.input`
     font-family: 'Cormorant Unicase', serif;
 `
 export const FormButton = styled.button`
+    font-family: 'Cormorant Unicase', serif;
     width: 100%;
     display: flex;
     justify-content: center;
